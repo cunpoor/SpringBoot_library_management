@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="main-menu" th:fragment="header">
+    <nav class="navbar navbar-expand-lg bg-light py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-uppercase h-4" href="#"
+            >Quản lý thư viện</a
+            >
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}"
+                        ><i class="fa-solid fa-home me-2"></i>Trang chủ</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/book}"
+                        ><i class="fa-solid fa-book me-2"></i>Sách</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/location}"
+                        ><i class="fa-solid fa-books me-2"></i>Vị trí</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/category}"
+                        ><i class="fa-solid fa-list-dropdown me-2"></i>Thể loại</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/bookborrower}"
+                        ><i class="fa-solid fa-book-open-reader me-2"></i>Người mượn sách</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

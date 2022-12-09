@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+<body>
+<div layout:fragment="main-content">
+    <a th:href="@{/book/add}" class="btn btn-primary mb-4">Thêm sách</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr class="text-center">
+            <th>STT</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thể loại</th>
+            <th>Vị trí</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center">
+            <td colspan="7" th:if="${BOOK_LIST.isEmpty()}">Không có dữ liệu</td>
+        </tr>
+        <tr class="text-center" th:each="item:${BOOK_LIST}">
+            <td th:text="${itemStat.index + 1}"></td>
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getAuthor()}"></td>
+            <td th:text="${item.getPrice()}"></td>
+            <td th:text="${item.getQuantity()}"></td>
+            <td th:text="${item.getCategory().getName()}"></td>
+            <td th:text="${item.getLocation().getName()}"></td>
+            <td>
+                <a th:href="@{/book/update?id={id}(id=${item.getId()})}" class="btn btn-success">Update</a>
+                <a th:href="@{/book/delete?id={id}(id=${item.getId()})}" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

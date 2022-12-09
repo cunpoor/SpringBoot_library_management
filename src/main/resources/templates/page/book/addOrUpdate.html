@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+<body>
+<div layout:fragment="main-content">
+    <a th:href="@{/book}" class="btn pb-3"
+    ><i class="fa-solid fa-arrow-left-long pe-2"></i>Trở về</a
+    >
+    <form th:action="@{/book/save}" th:object="${BOOK}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="mb-3">
+            <label for="name" class="form-label">Tên sách:</label>
+            <input type="text" class="form-control" id="name" name="name" th:field="*{name}"/>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Tác giả:</label>
+            <input type="text" class="form-control" id="author" name="author" th:field="*{author}"/>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Giá:</label>
+            <input type="text" class="form-control" id="price" name="price" th:field="*{price}"/>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Số lượng:</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" th:field="*{quantity}"/>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Thể loại sách:</label>
+            <select class="form-select" name="category" id="category" th:field="*{category}">
+                <option value="1" th:each="item:${CATEGORY_LIST}" th:text="${item.getName()}"
+                        th:value="${item.getId()}">One
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Vị trí sách:</label>
+            <select class="form-select" name="location" id="location" th:field="*{location}">
+                <option value="1" th:each="item:${LOCATION_LIST}" th:text="${item.getName()}"
+                        th:value="${item.getId()}">One
+                </option>
+            </select>
+        </div>
+        <div class="text-danger pb-3">Message</div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

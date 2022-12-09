@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+<body>
+<div layout:fragment="main-content">
+    <a th:href="@{/category}" class="btn pb-3"
+    ><i class="fa-solid fa-arrow-left-long pe-2"></i>Trở về</a
+    >
+    <form th:action="@{/category/save}" th:object="${CATEGORY}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="mb-3">
+            <label for="name" class="form-label">Tên thể loại:</label>
+            <input type="text" class="form-control" id="name" name="name" th:field="*{name}"/>
+        </div>
+        <div class="text-danger pb-3">Message</div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

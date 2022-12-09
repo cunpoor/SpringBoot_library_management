@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="sidebar" th:fragment="sidebar">
+    <ul class="nav flex-column w-100 h-100 bg-light">
+        <h4 class="pt-3 ps-3 fw-bold text-uppercase">Danh mục sách</h4>
+        <li class="nav-item" th:each="item:${CATEGORY_MENU}">
+            <a class="nav-link" th:href="@{/book?category={id}(id=${item.getId()})}"
+            ><i class="fa-solid fa-hashtag me-2"></i><span th:text="${item.getName()}"></span> </a
+            >
+        </li>
+        <div class="divider"></div>
+    </ul>
+</nav>
+</body>
+</html>

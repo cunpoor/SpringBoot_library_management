@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+<body>
+<div layout:fragment="main-content">
+    <a th:href="@{/location/add}" class="btn btn-primary mb-4">Thêm vị trí sách</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr class="text-center">
+            <th>No.</th>
+            <th>Vị trí sách</th>
+            <th>Số lượng sách</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" th:if="${LOCATION_LIST.isEmpty()}">
+            <td colspan="4">Không có dữ liệu</td>
+        </tr>
+        <tr class="text-center" th:each="item: ${LOCATION_LIST}">
+            <td th:text="${itemStat.index + 1}"></td>
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getCountBook()}"></td>
+            <td>
+                <a th:href="@{/location/update?id={id}(id=${item.getId()})}" class="btn btn-success">Update</a>
+                <a th:href="@{/location/delete?id={id}(id=${item.getId()})}" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

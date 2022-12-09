@@ -1,0 +1,15 @@
+.main-menu .navbar .navbar-brand {
+    width: 350px;
+}
+
+.main-menu .navbar ul li a {
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 1em 1em !important;
+}
+
+.main-menu .navbar ul li:hover a {
+    background-color: #555;
+    color: #fff;
+}

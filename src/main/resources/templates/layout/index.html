@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý thư viện</title>
+    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link th:rel="stylesheet" th:href="@{/css/style.css}">
+    <link th:rel="stylesheet" th:href="@{/font-awesome-pro-v6-6.2.0/css/all.min.css}" type="text/css">
+</head>
+<body>
+<header th:replace="~{layout/header::header}"></header>
+<div class="d-flex">
+    <div th:replace="~{layout/sidebar::sidebar}"></div>
+    <div class="content container-fluid p-5" layout:fragment="main-content"></div>
+</div>
+<footer th:replace="~{layout/footer::footer}"></footer>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
