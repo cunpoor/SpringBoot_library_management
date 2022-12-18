@@ -13,4 +13,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     public List<Book> findBookByLocation_Id(Long id);
 
+    public List<Book> findBookByBookBorrower_Id(Long id);
 }

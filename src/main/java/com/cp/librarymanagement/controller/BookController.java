@@ -29,8 +29,12 @@ public class BookController {
     private LocationService locationService;
 
     @GetMapping
-    public String getAllBookPage(ModelMap model) {
-        model.addAttribute("BOOK_LIST", bookService.getAllBook());
+    public String getAllBookPage(ModelMap model, @RequestParam(value = "category", required = false) Long id) {
+        if (id != null) {
+            model.addAttribute("BOOK_LIST", bookService.getBookbyCatetory(id));
+        }else{
+            model.addAttribute("BOOK_LIST", bookService.getAllBook());
+        }
         return "page/book/index";
     }
 

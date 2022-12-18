@@ -1,10 +1,13 @@
 package com.cp.librarymanagement.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.Collection;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -21,5 +24,9 @@ public class BookBorrower {
     private String phone;
     @Column(nullable = true, length = 50)
     private String email;
+
+    @ManyToMany
+    @JoinTable(name = "borrow_detail", joinColumns = @JoinColumn(name = "borower_id"), inverseJoinColumns = @JoinColumn(name = "book_id"))
+    private Collection<Book> book;
 
 }

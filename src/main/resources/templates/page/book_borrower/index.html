@@ -5,13 +5,14 @@
 <body>
 <div layout:fragment="main-content">
     <a th:href="@{/bookborrower/add}" class="btn btn-primary mb-4">Thêm người mượn sách</a>
-    <table class="table table-bordered">
+    <table class="table table-bordered align-middle">
         <thead>
         <tr class="text-center">
             <th>No.</th>
             <th>Họ và tên</th>
             <th>Số điện thoại</th>
             <th>Email</th>
+            <th>Số sách mượn</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -24,7 +25,9 @@
             <td th:text="${item.getName()}"></td>
             <td th:text="${item.getPhone()}"></td>
             <td th:text="${item.getEmail()}"></td>
+            <td th:text="${item.getCountBook()}"></td>
             <td>
+                <a th:href="@{/bookborrower/update?id={id}(id=${item.getId()})}" class="btn btn-info">Chi tiết</a>
                 <a th:href="@{/bookborrower/update?id={id}(id=${item.getId()})}" class="btn btn-success">Update</a>
                 <a th:href="@{/bookborrower/delete?id={id}(id=${item.getId()})}" class="btn btn-danger">Xóa</a>
             </td>

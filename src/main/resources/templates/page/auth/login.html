@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý thư viện</title>
+    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link th:rel="stylesheet" th:href="@{/css/style.css}">
+    <link th:rel="stylesheet" th:href="@{/font-awesome-pro-v6-6.2.0/css/all.min.css}" type="text/css">
+</head>
+<body>
+    <div class="container-fluid" style="height: 100vh;">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="card text-center col-sm-12 col-md-8 col-lg-6 col-xl-4">
+                <div class="card-body m-3">
+                    <h2 class="text-center text-uppercase fw-bold mb-4">Đăng nhập vào hệ thống</h2>
+                    <form th:action="@{/login_process}" method="post">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="username"><i class="fa-solid fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="username" name="username"
+                                   aria-describedby="username">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="password"><i class="fa-solid fa-key"></i></span>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="password" name="password"
+                                   aria-describedby="password">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

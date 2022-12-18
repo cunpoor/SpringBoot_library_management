@@ -20,6 +20,11 @@ public class BookService {
         return repo.findAll();
     }
 
+    public List<Book> getBookbyCatetory(Long id){
+        log.info("Get all book by category - #id: " + id);
+        return repo.findBookByCategory_Id(id);
+    }
+
     public void saveBook(Book entity){
         log.info("Save book #name: " + entity.getName() + " #author: " + entity.getAuthor());
         repo.save(entity);

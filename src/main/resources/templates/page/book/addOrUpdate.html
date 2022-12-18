@@ -4,9 +4,7 @@
       layout:decorate="~{layout/index}">
 <body>
 <div layout:fragment="main-content">
-    <a th:href="@{/book}" class="btn pb-3"
-    ><i class="fa-solid fa-arrow-left-long pe-2"></i>Trở về</a
-    >
+    <div class="pb-3"><a th:href="@{/book}" class="btn"><i class="fa-solid fa-arrow-left-long pe-2"></i>Trở về</a></div>
     <form th:action="@{/book/save}" th:object="${BOOK}" method="post">
         <input type="hidden" th:field="*{id}"/>
         <div class="mb-3">
